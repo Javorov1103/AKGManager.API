@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FAMi584CWtNwrzONxFoN532vRvntGZcLcQJzKwaIwbN7/HR2wZsNLoNLUfEHq2RzleQGjwVNBtvBJnmKGcfMbQ==",
+  "dgSpecHash": "70IXpUE4kO70/+ZJqYzFEkiQ0QBIzOhPuzVDkUOK0fw48Jph4g+SoOvu1oUjN6veOqiXWs31jfI0Sm/xfvJgEQ==",
   "success": true,
-  "projectFilePath": "D:\\My Projects\\AutoService.API\\AutoService.API\\AutoService.API.csproj",
+  "projectFilePath": "D:\\My Projects\\AKGManager.API\\AutoService.API\\AutoService.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\10\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",
     "C:\\Users\\10\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

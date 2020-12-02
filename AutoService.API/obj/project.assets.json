@@ -378,11 +378,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\My Projects\\AutoService.API\\AutoService.API\\AutoService.API.csproj",
+      "projectUniqueName": "D:\\My Projects\\AKGManager.API\\AutoService.API\\AutoService.API.csproj",
       "projectName": "AutoService.API",
-      "projectPath": "D:\\My Projects\\AutoService.API\\AutoService.API\\AutoService.API.csproj",
+      "projectPath": "D:\\My Projects\\AKGManager.API\\AutoService.API\\AutoService.API.csproj",
       "packagesPath": "C:\\Users\\10\\.nuget\\packages\\",
-      "outputPath": "D:\\My Projects\\AutoService.API\\AutoService.API\\obj\\",
+      "outputPath": "D:\\My Projects\\AKGManager.API\\AutoService.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\10\\AppData\\Roaming\\NuGet\\NuGet.Config",

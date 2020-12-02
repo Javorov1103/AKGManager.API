@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AutoService.API.Features
+﻿namespace AutoService.API.Features
 {
-    public class ApiController
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+
+    [Authorize]
+    [ApiController]
+    [Route("[controller]")]
+    public class ApiController : ControllerBase
     {
     }
 }
