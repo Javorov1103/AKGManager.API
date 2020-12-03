@@ -10,14 +10,24 @@ using System.Threading.Tasks;
 
 namespace AutoService.API.Features.Identity
 {
-    public class LoginService : ILoginService
+    public class IdentityService : IIdentityService
     {
-        public Task<User> FindUserAsync(string username)
+        public Task<bool> CheckPasswordAsync(User user, string password)
         {
-            return new Task<User>(() => { return new User() {Id =1 , Username= "Kalin", Email = "k.javorov@gmail.com" }; });
+            throw new NotImplementedException();
         }
 
-        public string GenerateJSONWebToken(int userId, string userName, string secret)
+        public Task<bool> CreateAsync(User user, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<User> FindUserAsync(string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GenerateJwtToken(int userId, string userName, string secret)
         {
             //var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             //var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

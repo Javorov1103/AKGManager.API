@@ -68,7 +68,7 @@
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
             => services
-                .AddTransient<ILoginService, LoginService>();
+                .AddTransient<IIdentityService, IdentityService>();
 
         //public static IServiceCollection AddSwagger(this IServiceCollection services)
         //    => services.AddSwaggerGen(c =>

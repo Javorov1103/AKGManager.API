@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "M/wOrSqobN1tffUVbv6RkJARNtolTPU7oRqxCSaDWOCUTU6dEhpVMgsaQAW2DPIBXopEhEse/5v4kbsZ5gfv7Q==",
+  "dgSpecHash": "8A6tOf/UXk7yi62rNeDBRZh3JiW3mmP/PSGSOvrtCvPwpH5HoNrYuaASV58Rupl8kteqkHqsM4VNYOKlCSjCww==",
   "success": true,
   "projectFilePath": "D:\\Projects\\AKGManager.API\\AutoService.API\\AutoService.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.7.1\\microsoft.identitymodel.jsonwebtokens.6.7.1.nupkg.sha512",
@@ -11,6 +12,7 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.7.1\\microsoft.identitymodel.protocols.6.7.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.7.1\\microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.7.1\\microsoft.identitymodel.tokens.6.7.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.7.1\\system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
