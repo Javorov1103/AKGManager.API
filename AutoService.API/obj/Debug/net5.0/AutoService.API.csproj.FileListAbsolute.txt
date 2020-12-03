@@ -60,3 +60,34 @@ D:\My Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\scopedcss\bundle\
 D:\My Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.RazorTargetAssemblyInfo.cache
 D:\My Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.csproj.CopyComplete
 D:\My Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.genruntimeconfig.cache
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\appsettings.Development.json
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\appsettings.json
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\AutoService.API.exe
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\AutoService.API.deps.json
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\AutoService.API.runtimeconfig.json
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\AutoService.API.runtimeconfig.dev.json
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\AutoService.API.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\ref\AutoService.API.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\AutoService.API.pdb
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.csprojAssemblyReference.cache
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.AssemblyInfoInputs.cache
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.AssemblyInfo.cs
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.csproj.CoreCompileInputs.cache
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\staticwebassets\AutoService.API.StaticWebAssets.Manifest.cache
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\staticwebassets\AutoService.API.StaticWebAssets.xml
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\scopedcss\bundle\AutoService.API.styles.css
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.RazorTargetAssemblyInfo.cache
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.csproj.CopyComplete
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.dll
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\ref\AutoService.API.dll
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.pdb
+D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.genruntimeconfig.cache

@@ -24,8 +24,9 @@ namespace AutoService.API.Features
             _loginService = loginService;
             _appSettings = appSettings.Value;
         }
-        [AllowAnonymous]
+       
         [HttpPost]
+        [AllowAnonymous]
         [Route(nameof(Login))]
         public async Task<ActionResult> Login([FromBody] LoginRequestModel login)
         {
