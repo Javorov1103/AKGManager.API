@@ -3,10 +3,14 @@
     using System.Text;
     using AutoService.API.Features.Identity;
     using AutoService.API.Filters;
+    using AutoService.API.Infrastructure.Services;
+    using Catstagram.Server.Infrastructure.Services;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.DependencyInjection.Extensions;
     using Microsoft.IdentityModel.Tokens;
 
     public static class ServiceCollectionExtensions
@@ -67,8 +71,17 @@
         }
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
-            => services
+        {
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services
+                .AddScoped<ICurrentUserService, CurrentUserService>()
+                .AddScoped<IConnectionFactory, ConnectionFactory>()
                 .AddTransient<IIdentityService, IdentityService>();
+
+            return services;
+        }
+           
 
         //public static IServiceCollection AddSwagger(this IServiceCollection services)
         //    => services.AddSwaggerGen(c =>

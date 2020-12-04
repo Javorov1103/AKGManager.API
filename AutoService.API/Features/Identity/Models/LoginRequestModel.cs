@@ -5,6 +5,8 @@
     public class LoginRequestModel
     {
         [Required]
+        public int CompanyID { get; set; }
+        [Required]
         public string UserName { get; set; }
 
         [Required]

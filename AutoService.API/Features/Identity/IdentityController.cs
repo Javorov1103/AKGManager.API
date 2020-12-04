@@ -30,22 +30,22 @@ namespace AutoService.API.Features
         [Route(nameof(Login))]
         public async Task<ActionResult<LoginResponseModel>> Login([FromBody] LoginRequestModel model)
         {
-            User user = await this.identityService.FindUserAsync(model.UserName);
+            User user = await this.identityService.FindUserAsync(model);
 
             if (user == null)
             {
                 return Unauthorized();
             }
 
-            bool passwordValid = await this.identityService.CheckPasswordAsync(user, model.Password);
+            //bool passwordValid = await this.identityService.CheckPasswordAsync(user, model.Password);
 
-            if (!passwordValid)
-            {
-                return Unauthorized();
-            }
+            //if (!passwordValid)
+            //{
+            //    return Unauthorized();
+            //}
 
             var token = this.identityService.GenerateJwtToken(
-                user.Id,
+                user.Id.ToString(),
                 user.UserName,
                 this.appSettings.Secret);
 
@@ -60,11 +60,7 @@ namespace AutoService.API.Features
         [Route(nameof(Register))]
         public async Task<ActionResult> Register(RegisterRequestModel model)
         {
-            var user = new User
-            {
-                Email = model.Email,
-                UserName = model.UserName
-            };
+            var user = new User(model);
 
             bool result = await this.identityService.CreateAsync(user, model.Password);
 

@@ -91,3 +91,11 @@ D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.dll
 D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\ref\AutoService.API.dll
 D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.pdb
 D:\Projects\AKGManager.API\AutoService.API\obj\Debug\net5.0\AutoService.API.genruntimeconfig.cache
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Dapper.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\System.Data.SqlClient.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Projects\AKGManager.API\AutoService.API\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
