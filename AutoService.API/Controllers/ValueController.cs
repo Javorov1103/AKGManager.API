@@ -10,10 +10,10 @@ namespace AutoService.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValueController : Controller
+    public class ValueController
     {
         [HttpGet]
-        [Authorize]
+        [Route("")]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2", "value3", "value4", "value5" };

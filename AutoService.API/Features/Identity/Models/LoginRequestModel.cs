@@ -1,10 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-public class LoginRequestModel
+﻿namespace AutoService.API.Features.Identity
 {
-    [Required]
-    public string Username { get; set; }
+    using System.ComponentModel.DataAnnotations;
 
-    [Required]
-    public string Password { get; set; }
+    public class LoginRequestModel
+    {
+        [Required]
+        public int CompanyID { get; set; }
+        [Required]
+        public string UserName { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+    }
 }
