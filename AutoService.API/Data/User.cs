@@ -8,23 +8,29 @@ using System.Threading.Tasks;
 
 namespace AutoService.API.Data
 {
-    public class User : IdentityUser<int>, IEntity
+    public class User : GenericIdentity, IEntity
     {
-        public User()
+        public User() : base("", "Custom")
         {
 
         }
-
-        public User(RegisterRequestModel model)
+        public User(RegisterRequestModel model) : base(model.UserName, "Custom")
         {
             this.UserName = model.UserName;
             this.Email = model.Email;
-            this.PasswordHash = model.Password;
+            this.Password = model.Password;
         }
 
-        public DateTime CreatedOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? ModifiedOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string ModifiedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get; set; }
+
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? ModifiedOn { get; set; }
+        public string ModifiedBy { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using AutoService.API.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,6 +19,7 @@ namespace AutoService.API
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,7 +34,6 @@ namespace AutoService.API
                 .AddJwtAuthentication(services.GetApplicationSettings(this.Configuration))
                 .AddApplicationServices()
                 .AddApiControllers();
-
             //services
             //    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //    .AddJwtBearer(options =>
@@ -54,6 +55,19 @@ namespace AutoService.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //app.Use(async (context, next) =>
+            //{
+            //    AppContext appContext = new AppContext();
+            //    appContext.SetUser(context.Request);
+            //    // Do work that doesn't write to the Response.
+            //    await next.Invoke();
+            //    // Do logging or other work that doesn't write to the Response.
+            //});
+
+            app.UseMiddleware<JwtMiddleware>();
+
+
 
             app.UseAuthentication();
 

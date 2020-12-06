@@ -1,14 +1,18 @@
 ﻿using AutoService.API.Data;
 using AutoService.API.Features.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AutoService.API.Features
@@ -16,10 +20,11 @@ namespace AutoService.API.Features
     
     public class IdentityController : ApiController
     {
+       
         private readonly IIdentityService identityService;
         private readonly AppSettings appSettings;
 
-        public IdentityController(IIdentityService identityService, IOptions<AppSettings> appSettings)
+        public IdentityController( IIdentityService identityService, IOptions<AppSettings> appSettings)
         {
             this.identityService = identityService;
             this.appSettings = appSettings.Value;
@@ -30,24 +35,22 @@ namespace AutoService.API.Features
         [Route(nameof(Login))]
         public async Task<ActionResult<LoginResponseModel>> Login([FromBody] LoginRequestModel model)
         {
+
             User user = await this.identityService.FindUserAsync(model);
+
+            Thread.CurrentPrincipal = new GenericPrincipal( user, new string[] { });
 
             if (user == null)
             {
                 return Unauthorized();
             }
 
-            //bool passwordValid = await this.identityService.CheckPasswordAsync(user, model.Password);
-
-            //if (!passwordValid)
-            //{
-            //    return Unauthorized();
-            //}
 
             var token = this.identityService.GenerateJwtToken(
+                model.CompanyID,
                 user.Id.ToString(),
                 user.UserName,
-                this.appSettings.Secret);
+                this.appSettings.Secret); ;
 
             return new LoginResponseModel
             {
@@ -71,6 +74,13 @@ namespace AutoService.API.Features
 
             return Ok();
         }
-        
+
+        [HttpGet]
+        [Route("")]
+        public ActionResult<IEnumerable<string>> Get()
+        {
+            return new string[] { "value1", "value2", "value3", "value4", "value5", AppContext.User.UserName, AppContext.User.Name };
+        }
+
     }
 }

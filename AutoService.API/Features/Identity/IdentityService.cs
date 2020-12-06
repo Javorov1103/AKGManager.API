@@ -8,7 +8,9 @@ using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AutoService.API.Features.Identity
@@ -56,7 +58,7 @@ namespace AutoService.API.Features.Identity
                                   ,[Email]
                               FROM [User]
                               WHERE 
-                              Password = @Password and Username = @UserName";
+                              Password = @Password and Username = @UserName AND IsActive = 1";
 
             using (var connection = new SqlConnection(companyConnString))
             {
@@ -64,17 +66,41 @@ namespace AutoService.API.Features.Identity
             }
         }
 
-        public string GenerateJwtToken(string userId, string userName, string secret)
+        public  User FindUserById(int companyID, int userID)
         {
-            //var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            //var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            string companyConnString;
+            //User user;
 
-            //var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-            //  _config["Jwt:Issuer"],
-            //  null,
-            //  expires: DateTime.Now.AddMinutes(120),
-            //  signingCredentials: credentials);
-            //return new JwtSecurityTokenHandler().WriteToken(token);
+            var query = @"SELECT TOP 1 
+		                [ID]
+                      ,[CompanyID]
+                      ,[ConnectionString]
+                  FROM [Company]
+                  WHERE CompanyID = @CompanyID";
+
+            using (var connection = this.connectionFactory.GetStandardConnection())
+            {
+                var obj = connection.QueryFirstOrDefault(query, new { CompanyID = companyID });
+
+                companyConnString = obj.ConnectionString;
+            }
+
+            var findUserQuery = @"SELECT [ID]
+                                  ,[Username]
+                                  ,[Password]
+                                  ,[Email]
+                              FROM [User]
+                              WHERE 
+                              ID = @UserID AND IsActive = 1";
+
+            using (var connection = new SqlConnection(companyConnString))
+            {
+                return connection.QueryFirstOrDefault<User>(findUserQuery, new { UserID = userID });
+            }
+        }
+
+        public string GenerateJwtToken(int companyID, string userId, string userName, string secret)
+        {
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secret);
@@ -84,9 +110,10 @@ namespace AutoService.API.Features.Identity
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, userId),
-                    new Claim(ClaimTypes.Name, userName)
+                    new Claim(ClaimTypes.Name, userName),
+                    new Claim(ClaimTypes.GivenName, companyID.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddDays(7),
+                Expires = DateTime.UtcNow.AddDays(365),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -94,5 +121,6 @@ namespace AutoService.API.Features.Identity
 
             return encryptedToken;
         }
+
     }
 }
