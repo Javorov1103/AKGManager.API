@@ -1,17 +1,10 @@
 ﻿using AutoService.API.Data;
 using AutoService.API.Features.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Security.Principal;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -69,7 +62,7 @@ namespace AutoService.API.Features
 
             if (!result)
             {
-                return BadRequest();
+                return BadRequest();           
             }
 
             return Ok();
