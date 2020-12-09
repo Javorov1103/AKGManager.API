@@ -1,10 +1,19 @@
 ﻿using AutoService.API.Data;
 using AutoService.API.Features.Identity;
+using AutoService.API.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Principal;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,11 +25,13 @@ namespace AutoService.API.Features
        
         private readonly IIdentityService identityService;
         private readonly AppSettings appSettings;
+        private readonly ICurrentUserService currentUserService;
 
-        public IdentityController( IIdentityService identityService, IOptions<AppSettings> appSettings)
+        public IdentityController( IIdentityService identityService, IOptions<AppSettings> appSettings, ICurrentUserService currentUserService)
         {
             this.identityService = identityService;
             this.appSettings = appSettings.Value;
+            this.currentUserService = currentUserService;
         }
        
         [HttpPost]
@@ -31,12 +42,18 @@ namespace AutoService.API.Features
 
             User user = await this.identityService.FindUserAsync(model);
 
-            Thread.CurrentPrincipal = new GenericPrincipal( user, new string[] { });
+            
+           
 
             if (user == null)
             {
                 return Unauthorized();
             }
+
+            //Thread.CurrentPrincipal = new GenericPrincipal( user, new string[] { });
+            //this.httpContentAccessor.HttpContext.Items["User"] = user;
+
+            this.currentUserService.SetUser(user);
 
 
             var token = this.identityService.GenerateJwtToken(
@@ -62,7 +79,7 @@ namespace AutoService.API.Features
 
             if (!result)
             {
-                return BadRequest();           
+                return BadRequest();
             }
 
             return Ok();
@@ -70,9 +87,10 @@ namespace AutoService.API.Features
 
         [HttpGet]
         [Route("")]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<object>> Get()
         {
-            return new string[] { "value1", "value2", "value3", "value4", "value5", AppContext.User.UserName, AppContext.User.Name };
+            //return new string[] { "value1", "value2", "value3", "value4", "value5", AppContext.User.UserName, AppContext.User.Name };
+            return new object[] { "value1", "value2", "value3", "value4", "value5", this.currentUserService.GetUserName() };
         }
 
     }

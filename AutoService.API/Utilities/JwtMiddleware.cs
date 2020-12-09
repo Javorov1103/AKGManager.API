@@ -58,9 +58,9 @@ namespace AutoService.API.Utilities
                 // attach user to context on successful jwt validation
                 var user = userService.FindUserById(companyId, userId);
                 context.Items["User"] = user;
-                Thread.CurrentPrincipal = new GenericPrincipal(user, new string[] { });
+                //Thread.CurrentPrincipal = new GenericPrincipal(user, new string[] { });
             }
-            catch(Exception e)
+            catch
             {
                 // do nothing if jwt validation fails
                 // user is not attached to context so request won't have access to secure routes

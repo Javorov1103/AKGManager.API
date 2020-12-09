@@ -52,6 +52,7 @@
             services.AddHttpContextAccessor();
 
             services
+                .AddScoped<ICurrentUserService, CurrentUserService>()
                 .AddScoped<IConnectionFactory, ConnectionFactory>()
                 .AddTransient<IIdentityService, IdentityService>();
 
